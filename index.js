@@ -53,3 +53,28 @@ questionContainer.addEventListener("mouseout", () => {
 answer.addEventListener("mouseover", () => {
   answer.style.transform = "rotate(3deg)";
 });
+
+const keypressContainer = document.querySelector(".keypress");
+console.log(keypressContainer);
+const key = document.getElementById("key");
+
+const ring = () => {
+  const audio = new Audio();
+  audio.src = "./Enter.mp3";
+  audio.play();
+};
+
+document.addEventListener("keypress", (e) => {
+  key.textContent = e.key;
+  if (e.key === "g") {
+    keypressContainer.style.background = "green";
+  } else if (e.key === "r") {
+    keypressContainer.style.background = "red";
+  } else if (e.key === "y") {
+    keypressContainer.style.background = "yellow";
+  } else {
+    keypressContainer.style.background = "grey";
+  }
+
+  ring();
+});
