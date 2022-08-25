@@ -78,3 +78,28 @@ document.addEventListener("keypress", (e) => {
 
   ring();
 });
+
+const inputName = document.querySelector('input[type="text"]');
+const select = document.querySelector("select");
+const form = document.querySelector("form");
+let pseudo = "";
+let language = "";
+
+inputName.addEventListener("input", (e) => {
+  pseudo = e.target.value;
+});
+
+select.addEventListener("input", (e) => {
+  language = e.target.value;
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (agb.checked) {
+    document.querySelector("form > div").innerHTML = `
+    <h3>Pseudo: ${pseudo}</h3>
+    <h4>Favourite Language: ${language}</h4>`;
+  } else {
+    alert("Please accept the general sales conditions");
+  }
+});
