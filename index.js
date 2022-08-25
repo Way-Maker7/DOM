@@ -25,3 +25,31 @@ btn2.addEventListener("click", () => {
   answer.classList.add("show-answer");
   answer.style.background = "green";
 });
+
+const mousemove = document.querySelector(".mousemove");
+
+window.addEventListener("mousemove", (e) => {
+  mousemove.style.left = e.pageX + "px";
+  mousemove.style.top = e.pageY + "px";
+});
+
+window.addEventListener("mouseup", () => {
+  mousemove.style.transform = "scale(1)  translate(-50%, -50%)";
+});
+
+window.addEventListener("mousedown", () => {
+  mousemove.style.transform = "scale(2)  translate(-25%, -25%)";
+  mousemove.style.border = "2px solid green";
+});
+
+questionContainer.addEventListener("mouseenter", () => {
+  questionContainer.style.background = "grey";
+});
+
+questionContainer.addEventListener("mouseout", () => {
+  questionContainer.style.background = "orange";
+});
+
+answer.addEventListener("mouseover", () => {
+  answer.style.transform = "rotate(3deg)";
+});
